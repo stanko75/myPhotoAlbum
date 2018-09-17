@@ -1,0 +1,130 @@
+/**
+ * Base
+ */
+body, html {
+    height: 98%;
+    width: 99.7%;
+}
+
+#main {
+    position:relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ * Preloader module
+ */
+
+.progress.is-open {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.progress.is-close {
+    display: none;
+}
+
+/*dialog*/
+.pre-loader{
+    background-color: white;
+    border-color: white;
+    width:99%;
+    margin-right: 0.2%;
+    margin-left: 0.2%;
+
+    position:fixed;
+    top:45%;
+
+    z-index: 1;
+}
+
+.pre-loader::backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.lastFileName {
+    float: right;
+}
+
+/**
+ * Settings module
+ */
+
+.settings {
+    position:absolute;
+    opacity: 0.4;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 500ms ease;
+}
+
+.settings.is-open {
+    top:-90%;
+    -webkit-transform: translateY(0px);
+}
+
+.settings.is-closed {
+    top:100%;
+    -webkit-transform: translateY(-200%);
+}
+
+.mapOrImagesBtn {
+    top: 92%;
+    left: 50%;
+    position: relative;
+    color: white;
+}
+
+#logBtn {
+    top: 92%;
+    left: 50%;
+    height: 6%;
+    position: relative;
+}
+
+/**
+ * Log module
+ */
+
+#log {
+    width: 100%;
+    height: 20%;
+    border: solid;
+    border-color: #000000;
+    overflow: auto;
+}
+
+/**
+ * Progress module
+ */
+
+#progressOfLoadingImages {
+    top:90%;
+    width: 98%;
+    z-index: 1;
+}
+
+/**
+ * Images module
+ */
+
+#images-canvas {
+    width: 100%;
+    height: 69%;
+}
+
+.btn-images {
+    top: 99%;
+    left: 50%;
+    width: 99%;
+    height: 10%;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/googleMaps.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+
+    <div id="fb-root"></div>
+
+    <div class="pre-loader" data-bind="css: window.SM.Global.dialog.handle">
+      <div data-bind="with: window.SM.Global.progress">
+        <span data-bind="text: noOfPicsAndPicsLeft"></span>
+        <span class="lastFileName" data-bind="text: lastFileName"></span>
+        <progress id="progressOfLoadingImages" data-bind="attr: {max: poliMax, value: poliValue}" ></progress>
+      </div>
+    </div>
+
+    <div id="main">
+      <div id="map-canvas" data-bind="visible: !window.SM.Global.iw.displayImages()"></div>
+      <div class="fb-like"
+           data-href="https://www.milosev.com/"
+           data-layout="standard"
+           data-action="like"
+           data-show-faces="true"
+           data-share="true">
+      </div>
+      <img id="images-canvas" data-bind="visible: window.SM.Global.iw.displayImages, event: {mousedown: window.SM.Global.SettingsWindow.mouseDownHandler, mouseup: window.SM.Global.SettingsWindow.mouseUpHandler}, attr: {src: window.SM.Global.iw.imgSrc}">
+      <button class="btn-images" data-bind="click: window.SM.Global.iw.next"> > </button>
+      <button class="btn-images" id="prev" data-bind="click: window.SM.Global.iw.prev"> < </button>
+      <div id="settingsWindow" class="settings is-closed">
+        <button id="logBtn" data-bind="click: window.SM.Global.log.click, text: window.SM.Global.log.text"></button>
+        <input name="mapOrImages" id="mapOrImages" class="mapOrImagesBtn" type="checkbox" data-bind="checked: window.SM.Global.iw.displayImages"/>
+        <label for="mapOrImages" class="mapOrImagesBtn" data-bind="text: window.SM.Global.iw.text"></label>
+        <button data-bind="click: window.SM.Global.log.click, text: window.SM.Global.log.text"></button>
+      </div>
+    </div>
+
+    <div id="log" data-bind="visible: window.SM.Global.log.visible"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript" src="lib/exif.js"></script>
+    <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="lib/knockout-3.3.0.js"></script>
+
+    <script type="text/javascript" src="js/sm.namespaces.js"></script>
+
+    <script type="text/javascript" src="js/sm.progress.js"></script>
+    <script type="text/javascript" src="js/sm.readEXIFdata.js"></script>
+    <script type="text/javascript" src="js/sm.settings.js"></script>
+    <script type="text/javascript" src="js/sm.googleMaps.js"></script>
+    <script type="text/javascript" src="js/sm.visualize.js"></script>
+    <script type="text/javascript" src="js/sm.dialog.js"></script>
+    <script type="text/javascript" src="js/sm.log.js"></script>
+    <script type="text/javascript" src="js/sm.imagesView.js"></script>
+    <script type="text/javascript" src="js/sm.facebook.js"></script>
+
+    <script type="text/javascript" src="js/start.js"></script>
+
+  </body>
+</html>
